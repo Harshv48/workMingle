@@ -10,6 +10,7 @@ import dotenv from "dotenv";
  import authRoute from "./routes/auth.route.js";
  import cookieParser from "cookie-parser";
  import cors from "cors";
+ import path from "path"
 
   const app = express();
  dotenv.config();
@@ -40,6 +41,13 @@ app.use("/api/orders", orderRoute);
 app.use("/api/conversations", conversationRoute);
 app.use("/api/messages", messageRoute);
 app.use("/api/reviews", reviewRoute);
+
+
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, "/client/build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "/client/build/index.html"));
+});
 
 app.use((err, req, res, next) => {
  const errorStatus = err.status || 500;
