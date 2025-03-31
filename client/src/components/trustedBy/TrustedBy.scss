@@ -1,0 +1,40 @@
+.trustedBy {
+  background-color: #fafafa;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: rgb(200, 200, 200);
+    font-weight: 500;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+
+    img {
+      height: 50px;
+      object-fit: contain;
+      max-width: 100px; /* Prevents large images */
+    }
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .container {
+      max-height: 100px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    img {
+      height: 40px !important; /* Reduce image size */
+      max-width: 80px !important;
+    }
+  }
+}

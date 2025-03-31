@@ -1,0 +1,123 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  color: #666;
+  margin: 50px 0px;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .container {
+    width: 1400px;
+
+    .top {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); // Default: 4 columns
+      gap: 20px;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        h2 {
+          font-size: 16px;
+          color: #555;
+        }
+
+        span {
+          font-weight: 300;
+        }
+      }
+    }
+
+    hr {
+      margin: 50px 0px;
+      height: 0;
+      border: 1px solid #ebe9e9;
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        span {
+          font-size: 13px;
+          white-space: nowrap;
+        }
+      }
+
+      .right {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+
+        .social {
+          display: flex;
+          gap: 20px;
+        }
+
+        .link {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+      }
+    }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .container {
+      width: 90%;
+    }
+    .top {
+      grid-template-columns: repeat(2, 1fr) !important; // 2 columns on tablets
+    }
+  }
+
+  @media (max-width: 600px) {
+    .top {
+      grid-template-columns: repeat(2, 1fr) !important; // Still 2 columns for small screens
+      gap: 10px;
+    }
+
+    .bottom {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 15px;
+    }
+    
+  }
+
+  /* Fix for iPhone SE (375px width) */
+  @media (max-width: 450px) {
+    .top {
+      grid-template-columns: repeat(1, 1fr) !important; // Force 1 column layout
+      gap: 1px;
+      text-align: center;
+    }
+
+    .bottom {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .left, .right {
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}

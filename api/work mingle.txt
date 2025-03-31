@@ -1,0 +1,5 @@
+MONGO_URI=mongodb+srv://harshv:harshv3456@workmingle.v0slfup.mongodb.net/workMingleDB
+JWT_KEY=yourSuperSecretKey
+JWT_EXPIRES_IN=7d
+PORT=8800
+STRIPE=sk_test_51R7olb2VMkChVfFj05gJfV1gZdDpx8C5cLcSiYgUubiKu0tEJmzPc47ADIhkKpTmqMfhfIYYZTigtq8bFBcheauu00I5zQvT2L
